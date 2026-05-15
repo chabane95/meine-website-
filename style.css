@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #faf7f0;
+  color: #171717;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+main {
+  width: min(680px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 32px 0 80px;
+}
+
+header {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 96px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: #174f43;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 88px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: #666056;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0 0 22px;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.intro {
+  color: #3d3933;
+  font-size: 22px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.formulas {
+  padding-top: 7px;
+}
+
+.formula {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  color: #2d2a25;
+  font-size: 14px;
+  scrollbar-width: thin;
+}
+
+.formula + .formula {
+  margin-top: 18px;
+}
+
+.formula mjx-container[display="true"] {
+  margin: 0;
+  min-width: 0;
+}
+
+#about {
+  padding-top: 28px;
+  border-top: 1px solid #ddd4c7;
+}
+
+.theory-list {
+  margin-top: 56px;
+}
+
+.theory-list article {
+  padding: 24px 0;
+  border-top: 1px solid #ddd4c7;
+}
+
+.theory-list h2 {
+  margin-bottom: 8px;
+  text-transform: none;
+}
+
+.theory-list p {
+  color: #3d3933;
+}
+
+.chapter-status {
+  color: #777064;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.outline {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid #ddd4c7;
+}
+
+.note {
+  margin-top: 56px;
+}
+
+.derivation {
+  margin-top: 56px;
+}
+
+.derivation h2 {
+  margin: 48px 0 14px;
+  font-size: 17px;
+  text-transform: none;
+}
+
+.derivation h2:first-child {
+  margin-top: 0;
+}
+
+.outline h2 {
+  text-transform: none;
+}
+
+mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px;
+}
+
+.chapter-nav {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd4c7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+@media (max-width: 560px) {
+  header {
+    margin-bottom: 64px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .intro {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .formulas {
+    padding-top: 18px;
+    border-top: 1px solid #ddd4c7;
+  }
+}

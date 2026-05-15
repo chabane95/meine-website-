@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amine Chabane</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          displayMath: [["\\[", "\\]"]]
+        },
+        svg: {
+          fontCache: "global"
+        }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="theory.html">Theory</a>
+      </header>
+
+      <section id="home" class="home">
+        <div>
+          <p class="eyebrow">Amine Chabane</p>
+          <h1>Physicist.</h1>
+          <p class="intro">I am a physicist.</p>
+          <p class="links">
+            <a href="https://scholar.google.com/citations?user=3D0bznoAAAAJ&hl=en">Google Scholar</a>
+          </p>
+        </div>
+
+        <aside class="formulas" aria-label="Physics formulas">
+          <div class="formula">
+            \[
+            \mathcal{L}_{\mathrm{SM}}
+            =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+            +i\bar{\psi}\gamma^\mu D_\mu\psi
+            +|D_\mu H|^2-V(H)
+            \]
+          </div>
+
+          <div class="formula">
+            \[
+            G_{\mu\nu}+\Lambda g_{\mu\nu}
+            =\frac{8\pi G}{c^4}T_{\mu\nu}
+            \]
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <div class="cv">
+          <p>
+            My scientific work focuses on strongly interacting matter, QCD, and
+            high-energy nuclear collisions.
+          </p>
+          <ul>
+            <li>Research on Roberge-Weiss transitions and the QCD phase diagram.</li>
+            <li>Work on resonance suppression in heavy-ion collisions.</li>
+            <li>Publications in lattice QCD and hadronic transport phenomenology.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
