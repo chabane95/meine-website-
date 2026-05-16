@@ -1,11 +1,33 @@
+---
+// Astro kann LaTeX-Klammern wie { ... } sonst mit eigener Syntax verwechseln.
+// Deshalb stehen die zwei Startseiten-Formeln als einfache Textwerte hier oben.
+const standardModelFormula = String.raw`
+\[
+\mathcal{L}_{\mathrm{SM}}
+=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
++i\bar{\psi}\gamma^\mu D_\mu\psi
++|D_\mu H|^2-V(H)
+\]
+`;
+
+const einsteinFormula = String.raw`
+\[
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+=\frac{8\pi G}{c^4}T_{\mu\nu}
+\]
+`;
+---
+
 <!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amine Chabane</title>
-    <link rel="stylesheet" href="style.css" />
-    <script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- MathJax rendert die Formeln auf der Startseite. -->
+    <script is:inline>
       window.MathJax = {
         tex: {
           displayMath: [["\\[", "\\]"]]
@@ -19,12 +41,14 @@
   </head>
   <body>
     <main>
+      <!-- Einfache Navigation: keine Komponenten, keine extra Datei. -->
       <header>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="theory.html">Theory</a>
+        <a href="/#home">Home</a>
+        <a href="/#about">About</a>
+        <a href="/theory/">Theory</a>
       </header>
 
+      <!-- Startbereich der Website. -->
       <section id="home" class="home">
         <div>
           <p class="eyebrow">Amine Chabane</p>
@@ -35,25 +59,15 @@
           </p>
         </div>
 
+        <!-- Diese Formeln gehoeren optisch zur Startseite.
+             MathJax wandelt sie im Browser in gesetzte Formeln um. -->
         <aside class="formulas" aria-label="Physics formulas">
-          <div class="formula">
-            \[
-            \mathcal{L}_{\mathrm{SM}}
-            =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
-            +i\bar{\psi}\gamma^\mu D_\mu\psi
-            +|D_\mu H|^2-V(H)
-            \]
-          </div>
-
-          <div class="formula">
-            \[
-            G_{\mu\nu}+\Lambda g_{\mu\nu}
-            =\frac{8\pi G}{c^4}T_{\mu\nu}
-            \]
-          </div>
+          <div class="formula" set:html={standardModelFormula} />
+          <div class="formula" set:html={einsteinFormula} />
         </aside>
       </section>
 
+      <!-- About-Bereich: Text und Liste koennen direkt hier geaendert werden. -->
       <section id="about">
         <h2>About</h2>
         <div class="cv">

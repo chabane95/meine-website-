@@ -1,0 +1,16 @@
+{
+  "name": "meine-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^6.3.3",
+    "rehype-mathjax": "^7.1.0",
+    "remark-math": "^6.0.0"
+  }
+}

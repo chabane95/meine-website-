@@ -19,6 +19,7 @@ main {
 
 header {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
   margin-bottom: 96px;
   font-family: Arial, Helvetica, sans-serif;
@@ -116,6 +117,8 @@ li {
   border-top: 1px solid #ddd4c7;
 }
 
+/* Listen wie die Theory-Uebersicht:
+   Jeder Artikel bekommt nur eine klare Trennlinie und bleibt typografisch ruhig. */
 .theory-list {
   margin-top: 56px;
 }
@@ -131,6 +134,44 @@ li {
 }
 
 .theory-list p {
+  color: #3d3933;
+}
+
+/* Der Textbereich eines Markdown-Artikels.
+   Dieses Styling sorgt dafuer, dass Markdown-Artikel wie die alten Theory-Seiten aussehen. */
+.article-body {
+  margin-top: 48px;
+}
+
+.article-body h2 {
+  margin: 48px 0 14px;
+  font-size: 17px;
+  text-transform: none;
+}
+
+.article-body h3 {
+  margin: 36px 0 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.article-body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+}
+
+.article-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 16px;
+  background: #f1eadf;
+  font-size: 14px;
+}
+
+.article-body blockquote {
+  margin: 28px 0;
+  padding-left: 18px;
+  border-left: 2px solid #c8bcae;
   color: #3d3933;
 }
 

@@ -1,0 +1,43 @@
+---
+// Diese Datei ist das gemeinsame Layout fuer Markdown-Artikel.
+// Jede Theory-Notiz kann dieses Layout oben im Markdown-Header verwenden.
+const { frontmatter } = Astro.props;
+const backLink = frontmatter.backLink ?? "/theory/";
+const backText = frontmatter.backText ?? "Zur Theory-Übersicht";
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{frontmatter.title} | Amine Chabane</title>
+    <meta name="description" content={frontmatter.description ?? frontmatter.title} />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Diese Navigation bleibt bewusst einfach und ist auf allen Seiten gleich. -->
+      <header>
+        <a href="/">Home</a>
+        <a href="/#about">About</a>
+        <a href="/theory/">Theory</a>
+      </header>
+
+      <article class="article">
+        <p class="eyebrow">{frontmatter.section ?? "Theory"}</p>
+        <h1>{frontmatter.title}</h1>
+        {frontmatter.description && <p class="intro">{frontmatter.description}</p>}
+
+        <!-- Hier setzt Astro automatisch den Inhalt der jeweiligen Markdown-Datei ein. -->
+        <div class="article-body">
+          <slot />
+        </div>
+      </article>
+
+      <nav class="chapter-nav">
+        <a href={backLink}>{backText}</a>
+      </nav>
+    </main>
+  </body>
+</html>

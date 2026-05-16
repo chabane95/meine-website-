@@ -1,0 +1,249 @@
+---
+layout: "../../../Article.astro"
+title: "1. Warum Quantenfeldtheorie?"
+description: "Quantenfeldtheorie ist nicht einfach ein komplizierteres Werkzeug. Sie ist die natürliche Konsequenz, wenn man Quantenmechanik, spezielle Relativität, Lokalität und variable Teilchenzahl gleichzeitig ernst nimmt."
+section: "Quantenfeldtheorie"
+backLink: "/theory/qft/"
+backText: "Zur QFT-Übersicht"
+---
+
+## Leitfrage
+
+Warum reicht die gewöhnliche Quantenmechanik nicht als fundamentale Theorie der Natur? Die kurze Antwort lautet: Weil eine relativistische Welt keine feste Teilchenzahl kennt. Sobald genügend Energie lokal verfügbar ist, können Teilchen entstehen und verschwinden. Eine Theorie, deren Zustandsraum von Anfang an auf ein oder $N$ Teilchen festgelegt ist, kann deshalb nicht die endgültige Sprache sein.
+
+Quantenfeldtheorie dreht die Perspektive um: Nicht das einzelne Teilchen ist fundamental, sondern das Feld. Teilchen erscheinen später als quantisierte Anregungen dieses Feldes.
+
+## 1.1 Was wir gleichzeitig verlangen
+
+Wir starten nicht mit einer Formel, sondern mit Anforderungen an eine Theorie der mikroskopischen Natur. Eine fundamentale Theorie sollte mindestens vier Dinge leisten:
+
+- Sie muss Quanteneffekte beschreiben.
+
+- Sie muss mit spezieller Relativität verträglich sein.
+
+- Sie muss lokal sein: Physik an einem Ort darf nicht sofort beliebig weit entfernte Orte ändern.
+
+- Sie muss Prozesse mit Erzeugung und Vernichtung von Teilchen beschreiben.
+
+Jede dieser Forderungen ist für sich genommen vertraut. Zusammen sind sie aber extrem einschränkend. Genau aus diesem Druck entsteht Quantenfeldtheorie.
+
+## 1.2 Nichtrelativistische Quantenmechanik hat feste Teilchenzahl
+
+In der gewöhnlichen Schrödinger-Quantenmechanik beschreibt man ein Teilchen durch eine Wellenfunktion $\psi(\mathbf{x},t)$. Für $N$ Teilchen benutzt man entsprechend
+
+$$
+\psi(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_N,t).
+\tag{1}
+$$
+
+Die Zahl $N$ steht hier bereits in der Definition des Zustands. Der Hilbertraum für ein Teilchen ist ein anderer als der Hilbertraum für zwei Teilchen. Die Dynamik einer solchen Theorie kann Zustände innerhalb eines vorgegebenen $N$-Teilchenraums entwickeln, aber sie erzeugt nicht von selbst neue Sektoren mit anderer Teilchenzahl.
+
+Für viele Systeme ist das völlig ausreichend. Ein Elektron in einem Wasserstoffatom wird bei niedrigen Energien nicht plötzlich zu drei Elektronen und zwei Positronen. Die nichtrelativistische Theorie ist dann eine hervorragende Näherung. Aber sie ist nicht fundamental.
+
+## 1.3 Relativität macht feste Teilchenzahl instabil
+
+In der speziellen Relativität sind Energie und Impuls durch
+
+$$
+E^2=p^2c^2+m^2c^4
+\tag{2}
+$$
+
+verknüpft. In natürlichen Einheiten $c=\hbar=1$ schreibt man
+
+$$
+E^2=\mathbf{p}^2+m^2.
+\tag{3}
+$$
+
+Die Ruheenergie eines Teilchens ist $mc^2$. Wenn in einem kleinen Bereich genug Energie konzentriert wird, kann diese Energie in Masse umgewandelt werden. Für ein Teilchen-Antiteilchen-Paar liegt die Schwelle grob bei
+
+$$
+E_{\mathrm{threshold}}\geq 2mc^2.
+\tag{4}
+$$
+
+Damit ist feste Teilchenzahl keine fundamentale Eigenschaft der Natur, sondern eine Niedrigenergie-Näherung. Eine relativistische Quantentheorie muss Zustände mit
+
+$$
+0,\ 1,\ 2,\ 3,\ldots
+\tag{5}
+$$
+
+Teilchen gleichzeitig zulassen. Genau das führt zum Fockraum. Der Fockraum ist nicht ein technischer Luxus, sondern die mathematische Antwort auf die physikalische Tatsache, dass Teilchen erzeugt und vernichtet werden können.
+
+## 1.4 Der erste naive Versuch: relativistische Wellenfunktion
+
+Man könnte versuchen, einfach die relativistische Energie-Impuls-Relation zu quantisieren. Mit
+
+$$
+E\rightarrow i\hbar\frac{\partial}{\partial t},
+\qquad
+\mathbf{p}\rightarrow -i\hbar\nabla
+\tag{6}
+$$
+
+folgt aus Gleichung (2)
+
+$$
+\left(
+\frac{1}{c^2}\frac{\partial^2}{\partial t^2}
+-
+\nabla^2
++
+\frac{m^2c^2}{\hbar^2}
+\right)\psi=0.
+\tag{7}
+$$
+
+In natürlichen Einheiten wird daraus
+
+$$
+(\partial_\mu\partial^\mu+m^2)\psi=0.
+\tag{8}
+$$
+
+Das ist die Klein-Gordon-Gleichung. Sie ist mathematisch schön und relativistisch kovariant. Trotzdem ist sie als Einteilchen- Wellenfunktion problematisch.
+
+## 1.5 Das Problem mit der Wahrscheinlichkeitsdichte
+
+In der Schrödinger-Theorie ist $|\psi|^2$ eine positive Wahrscheinlichkeitsdichte. Für die Klein-Gordon-Gleichung ist die erhaltene Dichte nicht einfach $|\psi|^2$, sondern proportional zu
+
+$$
+\rho_{\mathrm{KG}}
+=
+i
+\left(
+\psi^\ast\frac{\partial\psi}{\partial t}
+-
+\psi\frac{\partial\psi^\ast}{\partial t}
+\right).
+\tag{9}
+$$
+
+Diese Größe ist nicht positiv definit. Sie kann positive oder negative Werte annehmen. Als Wahrscheinlichkeitsdichte für ein einzelnes Teilchen ist das fatal, denn Wahrscheinlichkeiten dürfen nicht negativ sein.
+
+Die richtige Interpretation ist nicht: Die Klein-Gordon-Gleichung ist falsch. Die richtige Interpretation ist: $\psi$ ist nicht die Wellenfunktion eines einzelnen relativistischen Teilchens. Sie ist der Vorläufer eines Feldes. Die erhaltene Größe ist eher eine Ladungsdichte als eine Wahrscheinlichkeitsdichte.
+
+## 1.6 Lokalität zwingt uns zu Feldern
+
+Relativität bedeutet nicht nur $E^2=\mathbf{p}^2+m^2$. Sie bedeutet auch, dass es keine sofortige Fernwirkung geben darf. Was an einem Ort geschieht, darf einen raumartig getrennten Ort nicht unmittelbar beeinflussen.
+
+Eine lokale Theorie organisiert die Freiheitsgrade deshalb nach Punkten im Raum. Genau das ist ein Feld:
+
+$$
+\phi:\ (\mathbf{x},t)\mapsto \phi(\mathbf{x},t).
+\tag{10}
+$$
+
+Ein Feld ist nicht einfach eine hübsche mathematische Schreibweise. Es ist die direkte Art, lokale Freiheitsgrade zu beschreiben. Wenn die Welt lokal und relativistisch ist, ist ein Feld natürlicher als ein einzelnes Teilchen mit einer globalen Wellenfunktion.
+
+## 1.7 Klassische Felder vor der Quantisierung
+
+Bevor man quantisiert, beschreibt man ein Feld klassisch durch eine Wirkung
+
+$$
+S=\int d^4x\,\mathcal{L}.
+\tag{11}
+$$
+
+Für ein freies reales Skalarfeld sucht man die einfachste Lagrangedichte, die lokal, lorentzinvariant und quadratisch im Feld ist. Die beiden einfachsten Bausteine sind ein kinetischer Term und ein Massenterm:
+
+$$
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_\mu\phi\,\partial^\mu\phi
+-
+\frac{1}{2}m^2\phi^2.
+\tag{12}
+$$
+
+Die Euler-Lagrange-Gleichung für Felder lautet
+
+$$
+\frac{\partial\mathcal{L}}{\partial\phi}
+-
+\partial_\mu
+\left(
+\frac{\partial\mathcal{L}}
+{\partial(\partial_\mu\phi)}
+\right)
+=0.
+\tag{13}
+$$
+
+Eingesetzt in Gleichung (12) ergibt das
+
+$$
+(\partial_\mu\partial^\mu+m^2)\phi=0.
+\tag{14}
+$$
+
+Die Klein-Gordon-Gleichung erscheint also wieder, aber jetzt als Feldgleichung. Das ist der entscheidende Wechsel der Interpretation.
+
+## 1.8 Quantisiert wird das Feld, nicht die Einteilchen-Wellenfunktion
+
+In der Quantenfeldtheorie wird das Feld selbst zum Operator. Zum Feld $\phi(\mathbf{x},t)$ gehört ein kanonisch konjugierter Impuls
+
+$$
+\pi(\mathbf{x},t)
+=
+\frac{\partial\mathcal{L}}{\partial\dot{\phi}}
+=
+\dot{\phi}(\mathbf{x},t).
+\tag{15}
+$$
+
+Die kanonische Quantisierung ersetzt die klassischen Variablen durch Operatoren und fordert zur gleichen Zeit
+
+$$
+[\hat{\phi}(\mathbf{x},t),\hat{\pi}(\mathbf{y},t)]
+=
+i\hbar\delta^{(3)}(\mathbf{x}-\mathbf{y}).
+\tag{16}
+$$
+
+Das freie Feld kann in Moden zerlegt werden. Schematisch hat man
+
+$$
+\hat{\phi}(x)
+=
+\int\frac{d^3p}{(2\pi)^3}
+\frac{1}{\sqrt{2E_{\mathbf{p}}}}
+\left(
+\hat{a}_{\mathbf{p}}e^{-ipx}
++
+\hat{a}_{\mathbf{p}}^\dagger e^{ipx}
+\right).
+\tag{17}
+$$
+
+Die Operatoren $\hat{a}_{\mathbf{p}}^\dagger$ erzeugen Quanten des Feldes, und $\hat{a}_{\mathbf{p}}$ vernichten sie. Diese Quanten nennen wir Teilchen. Teilchen sind also nicht mehr fundamental, sondern Anregungen eines zugrunde liegenden Feldes.
+
+## 1.9 Was QFT wirklich erklärt
+
+Dieser Perspektivwechsel ist enorm. Quantenfeldtheorie erklärt nicht nur ein neues Rechenverfahren. Sie erklärt, warum Teilchen entstehen können, warum Antiteilchen natürlich auftreten, warum Streuprozesse durch lokale Kopplungen beschrieben werden und warum Symmetrien so tief mit Erhaltungssätzen verbunden sind.
+
+Die zentrale Idee kann man so zusammenfassen:
+
+$$
+\text{Feld}
+\quad\longrightarrow\quad
+\text{Quantisierung}
+\quad\longrightarrow\quad
+\text{Teilchen als Anregungen}.
+\tag{18}
+$$
+
+Deshalb ist QFT die Sprache des Standardmodells. Photonen sind Quanten des elektromagnetischen Feldes, Elektronen sind Anregungen des Dirac-Feldes, Gluonen sind Quanten der $SU(3)$-Eichfelder. QCD ist keine zusätzliche Dekoration dieser Idee, sondern eine ihrer tiefsten Anwendungen.
+
+## 1.10 Was man nicht falsch verstehen darf
+
+QFT sagt nicht, dass Teilchen Illusionen sind. Teilchen sind reale, messbare Anregungen. Aber sie sind nicht die fundamentalsten Objekte in der Theorie. Fundamental sind die Felder und ihre lokalen Wechselwirkungen.
+
+Ebenso sagt QFT nicht, dass gewöhnliche Quantenmechanik falsch ist. Nichtrelativistische Quantenmechanik ist eine Grenztheorie. Sie ist das, was übrig bleibt, wenn Energien klein sind, Teilchenzahl praktisch erhalten bleibt und relativistische Effekte unterdrückt sind.
+
+## 1.11 Nächster Schritt
+
+Der nächste logische Schritt ist nicht sofort Feynman-Diagramme. Zuerst muss die Sprache sauber werden: Vierervektoren, Metrik, Lorentz-Transformationen, natürliche Einheiten und kovariante Schreibweise. Ohne diese Grundlage wirkt QFT später wie Magie. Mit ihr wird sie eine konsequente Theorie lokaler quantisierter Felder.
