@@ -63,3 +63,8 @@ Dann die Seite im Browser ueber Astro oeffnen, zum Beispiel:
 ```txt
 http://localhost:4321/theory/classical-electrodynamics/
 ```
+
+Deployment:
+
+Die fertige Website wird nicht direkt aus den `.astro`- und `.md`-Dateien angezeigt.
+GitHub Actions baut die Seite zuerst mit `npm run build` und veroeffentlicht dann den Ordner `dist/`.

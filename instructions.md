@@ -93,6 +93,7 @@ Wichtig:
 - Markdown-Dateien werden nicht direkt im Browser geoeffnet. Die Website wird mit `npm run dev` gestartet und dann ueber `http://localhost:4321/...` angesehen.
 - Bilder kommen spaeter nach `public/images/`, falls Bilder gebraucht werden.
 - `node_modules`, `package.json`, `package-lock.json` und `astro.config.mjs` gehoeren technisch zu Astro/npm. Sie sind keine Inhalte der Website.
+- `.github/workflows/deploy.yml` ist die einzige Deploy-Datei. Sie ist noetig, damit GitHub Pages die von Astro gebaute Website aus `dist/` veroeffentlicht.
 
 Bitte keine tiefen Strukturen wie:
 

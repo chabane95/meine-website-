@@ -1,0 +1,60 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # GitHub holt sich zuerst den Code aus diesem Repository.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Astro braucht Node.js, weil die Markdown-Dateien erst gebaut werden.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # npm ci installiert exakt die Versionen aus package-lock.json.
+      - name: Install dependencies
+        run: npm ci
+
+      # Astro erzeugt aus src/pages und public die fertige Website in dist/.
+      - name: Build
+        run: npm run build
+
+      # Die Custom Domain muss auch im fertigen dist-Ordner liegen.
+      - name: Add custom domain
+        run: cp CNAME dist/CNAME
+
+      # Der dist-Ordner wird als GitHub-Pages-Artefakt hochgeladen.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      # GitHub Pages veroeffentlicht hier den fertigen dist-Ordner.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
