@@ -52,6 +52,103 @@ backText: "Zur QFT-Übersicht"
 ---
 ```
 
+## Neues Dokument schreiben und pushen
+
+Vorher immer den aktuellen Stand von GitHub holen:
+
+```sh
+git pull --ff-only
+```
+
+Dann eine neue Markdown-Datei in `src/pages/theory/` anlegen.
+Der Dateiname wird zur URL:
+
+```txt
+src/pages/theory/classical-mechanics.md
+```
+
+wird zu:
+
+```txt
+/theory/classical-mechanics/
+```
+
+Beispiel fuer eine neue Theory-Seite:
+
+```md
+---
+layout: "../../Article.astro"
+title: "Klassische Mechanik"
+description: "Newtonsche Mechanik, Lagrange-Formalismus und Hamilton-Mechanik."
+---
+
+## Ausgangspunkt
+
+Hier steht der Text.
+
+Inline-Formel: $E = T + V$
+
+Block-Formel:
+
+$$
+F = m a
+$$
+```
+
+Damit die Seite in der Theory-Uebersicht erscheint, in
+`src/pages/theory/index.astro` einen neuen Eintrag in die `theory-list`
+setzen:
+
+```astro
+<article>
+  <h2><a href="/theory/classical-mechanics/">Klassische Mechanik</a></h2>
+  <p>
+    Newtonsche Bewegungsgleichungen, Energie, Impuls,
+    Lagrange-Mechanik und Hamilton-Formalismus.
+  </p>
+</article>
+```
+
+Lokal testen:
+
+```sh
+npm run dev
+```
+
+Dann im Browser oeffnen:
+
+```txt
+http://127.0.0.1:4321/theory/
+```
+
+oder direkt:
+
+```txt
+http://127.0.0.1:4321/theory/classical-mechanics/
+```
+
+Vor dem Push pruefen, ob Astro die Seite bauen kann:
+
+```sh
+npm run build
+```
+
+Dann committen und pushen:
+
+```sh
+git status
+git add src/pages/theory/index.astro src/pages/theory/classical-mechanics.md
+git commit -m "Add classical mechanics page"
+git push
+```
+
+Wenn beim Push `fetch first` kommt:
+
+```sh
+git pull --ff-only
+git push
+```
+
 Wichtig: Markdown-Dateien nicht direkt im Browser oeffnen. Immer zuerst:
 
 ```sh
